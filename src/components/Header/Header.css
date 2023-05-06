@@ -1,0 +1,40 @@
+.App-header {
+    height: 75px;
+    width: 100%;
+    display: flex;
+}
+
+.header-right-side,
+.header-left-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 25px;
+}
+
+.how-it-works,
+.log-in,
+.sign-up,
+.browse-job {
+    font-family: 'Helvetica';
+    font-size: 24px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.how-it-works:hover,
+.log-in:hover,
+.sign-up:hover,
+.browse-job:hover {
+    color: #139ff0;
+}
+
+.logo {
+    background-image: url(../../dreamJob.jpeg);
+    width: 128px;
+    height: 73px;
+    background-size: cover;
+}
+
