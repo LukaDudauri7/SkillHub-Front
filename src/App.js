@@ -12,7 +12,7 @@ function App() {
       <Scale>
         <Header />
         {/* <Container /> */}
-        <Registration />
+        {/* <Registration /> */}
         <br></br>
         <Login />
       </Scale>

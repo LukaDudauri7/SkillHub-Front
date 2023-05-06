@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import './Header.css'
+import Registration from '../Registration/Registration';
 
-function Header(){
-    return(
-        <div className="App-header">
+function Header() {
+  const [isActive, setIsActive] = useState(false);
+  const [isShown, setIsShown] = useState(false);
+
+
+  return (
+    <div>
+      <div className="App-header">
         <div className='header-left-side'>
           <div className='logo'></div>
           <div className='how-it-works'>how it works</div>
@@ -11,10 +18,17 @@ function Header(){
 
         <div className='header-right-side'>
           <div className='log-in'>Log In</div>
-          <div className='sign-up'>Join</div>
+          <div>
+            <button className='sign-up' onClick={(e) => setIsShown(true)}>
+              Join
+            </button>
+          </div>
         </div>
       </div>
-    )
+      <Registration style={{ display: isShown ? 'block' : 'none' }} />
+    </div>
+
+  )
 }
 
 export default Header;

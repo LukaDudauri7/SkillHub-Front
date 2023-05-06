@@ -1,10 +1,12 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import './Registration.css'
 
 function Registration() {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [adress, setAdress] = useState('');
+    const [address, setAdress] = useState('');
+    const [showed, setShowed] = useState(false);    
 
     const handleNameChange = (value) => {
         setName(value);
@@ -22,6 +24,7 @@ function Registration() {
         const data = {
             Name: name,
             PhoneNumber: phoneNumber,
+            Address: address,
             IsActive: 1
         }
 
@@ -33,28 +36,70 @@ function Registration() {
 
     return (
         <Fragment>
-            <div>Registration</div>
-            <label>Name</label>
-            <input type="text"
-                id="txtName"
-                placeholder="Enter Name"
-                onChange={(e) => handleNameChange(e.target.value)}
-            /> <br></br>
+            <div className="popup" style={showed ? { display: "none" } : { display: "block" }}>
+                <div className="close-button" onClick={(e) => setShowed(true)}></div>
+                <div className="form_wrapper">
+                    <div className="reg-header">Registration</div>
+                    <div className="fields">
+                        <label>Name</label>
+                        <input type="text"
+                            id="txtName"
+                            placeholder="Enter Name"
+                            onChange={(e) => handleNameChange(e.target.value)}
+                        /> <br></br>
+                    </div>
 
-            <label>Phone Number</label>
-            <input type="text"
-                id="txtPhoneNumber"
-                placeholder="Enter Phone Number"
-                onChange={(e) => handlePhoneNumberChange(e.target.value)} />
-            <br></br>
 
-            <label>Name</label>
-            <input type="text"
-                id="txtAddress"
-                placeholder="Enter Address"
-                onChange={(e) => handleAddressChange(e.target.value)} />
-            <br></br>
-            <button onClick={() => handleSave()}>Save</button>
+                    <div className="fields">
+                        <label>Phone Number</label>
+                        <input type="text"
+                            id="txtPhoneNumber"
+                            placeholder="Enter Phone Number"
+                            onChange={(e) => handlePhoneNumberChange(e.target.value)} />
+                        <br></br>
+                    </div>
+
+                    <div className="fields">
+                        <label>Address</label>
+                        <input type="text"
+                            id="txtAddress"
+                            placeholder="Enter Address"
+                            onChange={(e) => handleAddressChange(e.target.value)} />
+                        <br></br>
+                    </div>
+
+                    <div className="fields">
+                        <label>E-Mail</label>
+                        <input type="text"
+                            id="txtAddress"
+                            placeholder="Enter E-Mail"
+                            onChange={(e) => handleAddressChange(e.target.value)} />
+                        <br></br>
+                    </div>
+
+                    <div className="fields">
+                        <label>Password</label>
+                        <input type="text"
+                            id="txtAddress"
+                            placeholder="Enter Password"
+                            onChange={(e) => handleAddressChange(e.target.value)} />
+                        <br></br>
+                    </div>
+
+                    <div className="fields">
+                        <label>Confirm Password</label>
+                        <input type="text"
+                            id="txtAddress"
+                            placeholder="Confirm Password"
+                            onChange={(e) => handleAddressChange(e.target.value)} />
+                        <br></br>
+                    </div>
+                    <div className="save-div">
+                        <button className="saveBtn" onClick={() => handleSave()}>Save</button>
+                    </div>
+                </div>
+            </div>
+
         </Fragment>
     )
 }
