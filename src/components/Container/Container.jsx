@@ -3,7 +3,7 @@ import './Container.css';
 function Container() {
     return (
         <div className='container'>
-            <div className='job-search'>
+            <div className='job-opportunity'>
                 <div className='div-block'>
                     <div className='hire'>
                         Hire the best <br /> 

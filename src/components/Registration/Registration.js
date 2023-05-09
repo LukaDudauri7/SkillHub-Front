@@ -2,33 +2,50 @@ import React, { Fragment, useState } from "react";
 import axios from "axios";
 import './Registration.css'
 
-function Registration() {
-    const [name, setName] = useState('');
+function Registration({ setIsShown }) {
+    const [firstName, setFirstName] = useState('');
+    const [lasttName, setLastName] = useState('');
+    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [address, setAdress] = useState('');
-    const [showed, setShowed] = useState(false);    
+    const [password, setPassword] = useState('');
+    const [showed, setShowed] = useState(false);
 
-    const handleNameChange = (value) => {
-        setName(value);
+    const handleFirstNameChange = (value) => {
+        setFirstName(value);
+    }
+
+    const handleLastNameChange = (value) => {
+        setLastName(value);
+    }
+
+    const handleUserNameChange = (value) => {
+        setUserName(value);
     }
 
     const handlePhoneNumberChange = (value) => {
         setPhoneNumber(value);
     }
 
-    const handleAddressChange = (value) => {
-        setAdress(value);
+    const handleEmailChange = (value) => {
+        setEmail(value);
+    }
+
+    const handlePasswordChange = (value) => {
+        setPassword(value);
     }
 
     const handleSave = () => {
         const data = {
-            Name: name,
+            FirstName: firstName,
+            LastName: lasttName,
+            UserName: userName,
+            Email: email,
             PhoneNumber: phoneNumber,
-            Address: address,
-            IsActive: 1
+            Password: password
         }
 
-        const url = '';
+        const url = 'https://localhost:7028/Auth/register';
         axios.post(url, data).then((result) => {
             alert(result.data);
         }).catch((error) => { alert(error) })
@@ -36,45 +53,54 @@ function Registration() {
 
     return (
         <Fragment>
-            <div className="popup" style={showed ? { display: "none" } : { display: "block" }}>
-                <div className="close-button" onClick={(e) => setShowed(true)}></div>
+            <div className="popup">
+                <div className="close-button" onClick={(e) => setIsShown(false)}></div>
                 <div className="form_wrapper">
                     <div className="reg-header">Registration</div>
                     <div className="fields">
-                        <label>Name</label>
+                        <label>First Name</label>
                         <input type="text"
                             id="txtName"
-                            placeholder="Enter Name"
-                            onChange={(e) => handleNameChange(e.target.value)}
-                        /> <br></br>
+                            placeholder="Enter FirstName"
+                            onChange={(e) => handleFirstNameChange(e.target.value)}
+                        />
                     </div>
 
+                    <div className="fields">
+                        <label>Last Name</label>
+                        <input type="text"
+                            id="txtName"
+                            placeholder="Enter LastName"
+                            onChange={(e) => handleLastNameChange(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="fields">
+                        <label>User Name</label>
+                        <input type="text"
+                            id="txtName"
+                            placeholder="Enter UserName"
+                            onChange={(e) => handleUserNameChange(e.target.value)}
+                        />
+                    </div>
 
                     <div className="fields">
                         <label>Phone Number</label>
                         <input type="text"
                             id="txtPhoneNumber"
                             placeholder="Enter Phone Number"
-                            onChange={(e) => handlePhoneNumberChange(e.target.value)} />
-                        <br></br>
-                    </div>
-
-                    <div className="fields">
-                        <label>Address</label>
-                        <input type="text"
-                            id="txtAddress"
-                            placeholder="Enter Address"
-                            onChange={(e) => handleAddressChange(e.target.value)} />
-                        <br></br>
+                            onChange={(e) => handlePhoneNumberChange(e.target.value)}
+                        />
                     </div>
 
                     <div className="fields">
                         <label>E-Mail</label>
                         <input type="text"
-                            id="txtAddress"
+                            id="txtEmail"
                             placeholder="Enter E-Mail"
-                            onChange={(e) => handleAddressChange(e.target.value)} />
-                        <br></br>
+                            onChange={(e) => handleEmailChange(e.target.value)}
+                        />
+
                     </div>
 
                     <div className="fields">
@@ -82,18 +108,10 @@ function Registration() {
                         <input type="text"
                             id="txtAddress"
                             placeholder="Enter Password"
-                            onChange={(e) => handleAddressChange(e.target.value)} />
-                        <br></br>
+                            onChange={(e) => handlePasswordChange(e.target.value)}
+                        />
                     </div>
 
-                    <div className="fields">
-                        <label>Confirm Password</label>
-                        <input type="text"
-                            id="txtAddress"
-                            placeholder="Confirm Password"
-                            onChange={(e) => handleAddressChange(e.target.value)} />
-                        <br></br>
-                    </div>
                     <div className="save-div">
                         <button className="saveBtn" onClick={() => handleSave()}>Save</button>
                     </div>

@@ -1,5 +1,5 @@
 .App-header {
-    height: 75px;
+    height: 90px;
     width: 100%;
     display: flex;
 }
@@ -32,9 +32,10 @@
 }
 
 .logo {
-    background-image: url(../../dreamJob.jpeg);
-    width: 128px;
-    height: 73px;
-    background-size: cover;
+    background-image: url(../../images/logo.gif);
+    width: 180px;
+    height: 85px;
+    background-size: 100%;
+    cursor: pointer;
 }
 

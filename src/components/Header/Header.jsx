@@ -1,11 +1,18 @@
-import { useState } from 'react';
 import './Header.css'
+import { useState } from 'react';
 import Registration from '../Registration/Registration';
+import { Routes, Route, useNavigate, Router } from 'react-router-dom';
+import Login from '../Login/Login';
+import App from '../../App';  
+
 
 function Header() {
-  const [isActive, setIsActive] = useState(false);
   const [isShown, setIsShown] = useState(false);
 
+  const navigate = useNavigate();
+  const navigateLogIn = () => {
+    navigate('/login');
+  };
 
   return (
     <div>
@@ -17,7 +24,10 @@ function Header() {
         </div>
 
         <div className='header-right-side'>
-          <div className='log-in'>Log In</div>
+          <div className='log-in' onClick={navigateLogIn}>Log In</div>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+            </Routes>
           <div>
             <button className='sign-up' onClick={(e) => setIsShown(true)}>
               Join
@@ -25,7 +35,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <Registration style={{ display: isShown ? 'block' : 'none' }} />
+      {isShown ? <Registration setIsShown={setIsShown} /> : ''}
     </div>
 
   )

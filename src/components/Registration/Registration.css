@@ -4,6 +4,12 @@ body {
     background: #f2f2f2;
 }
 
+.popup{
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
 .form_wrapper {
     background: #fff;
@@ -52,11 +58,11 @@ input{
 }
 
 .close-button{
-    background-image: url(../../cancel.png);
+    background-image: url(../../images/cancel.png);
     width: 50px;
     height: 50px;
     position: absolute;
     left: 1157px;
-    top: 204px;
+    top: 133px;
     cursor: pointer;
 }

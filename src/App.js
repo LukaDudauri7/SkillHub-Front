@@ -1,21 +1,21 @@
 import './App.css';
 import Scale from './Scale';
+import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 import Container from './components/Container/Container';
-import Registration from './components/Registration/Registration';
-import Login from './components/Login/Login';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
     <div className="App">
-      <Scale>
-        <Header />
-        {/* <Container /> */}
-        {/* <Registration /> */}
-        <br></br>
-        <Login />
-      </Scale>
+      <Router>
+        <Scale>
+          <Header />
+          <Container />
+        </Scale>
+      </Router>
     </div>
   );
 }
