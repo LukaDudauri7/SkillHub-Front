@@ -17,16 +17,20 @@
 .how-it-works,
 .log-in,
 .sign-up,
-.browse-job {
+.browse-job,
+.login {
     font-family: 'Helvetica';
     font-size: 24px;
     cursor: pointer;
     text-transform: capitalize;
+    text-decoration: none;
+    color: black;
 }
 
 .how-it-works:hover,
 .log-in:hover,
 .sign-up:hover,
+.login:hover,
 .browse-job:hover {
     color: #139ff0;
 }
@@ -39,3 +43,8 @@
     cursor: pointer;
 }
 
+.reg{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
