@@ -3,29 +3,29 @@ import axios from "axios";
 import './Registration.css'
 
 function Registration({ setIsShown }) {
-    const [firstName, setFirstName] = useState('');
-    const [lasttName, setLastName] = useState('');
+    // const [firstName, setFirstName] = useState('');
+    // const [lasttName, setLastName] = useState('');
+    // const [phoneNumber, setPhoneNumber] = useState('');
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleFirstNameChange = (value) => {
-        setFirstName(value);
-    }
+    // const handleFirstNameChange = (value) => {
+    //     setFirstName(value);
+    // }
 
-    const handleLastNameChange = (value) => {
-        setLastName(value);
-    }
+    // const handleLastNameChange = (value) => {
+    //     setLastName(value);
+    // }
+
+
+    // const handlePhoneNumberChange = (value) => {
+    //     setPhoneNumber(value);
+    // }
 
     const handleUserNameChange = (value) => {
         setUserName(value);
     }
-
-    const handlePhoneNumberChange = (value) => {
-        setPhoneNumber(value);
-    }
-
     const handleEmailChange = (value) => {
         setEmail(value);
     }
@@ -36,11 +36,11 @@ function Registration({ setIsShown }) {
 
     const handleSave = () => {
         const data = {
-            FirstName: firstName,
-            LastName: lasttName,
+            // FirstName: firstName,
+            // LastName: lasttName,
+            // PhoneNumber: phoneNumber,
             UserName: userName,
             Email: email,
-            PhoneNumber: phoneNumber,
             Password: password
         }
 
@@ -56,7 +56,7 @@ function Registration({ setIsShown }) {
                 <div className="popup">
                     <div className="form_wrapper">
                         <div className="reg-header">Registration</div>
-                        <div className="fields">
+                        {/* <div className="fields">
                             <label>First Name</label>
                             <input type="text"
                                 id="txtName"
@@ -72,7 +72,7 @@ function Registration({ setIsShown }) {
                                 placeholder="Enter LastName"
                                 onChange={(e) => handleLastNameChange(e.target.value)}
                             />
-                        </div>
+                        </div> */}
 
                         <div className="fields">
                             <label>User Name</label>
@@ -83,14 +83,14 @@ function Registration({ setIsShown }) {
                             />
                         </div>
 
-                        <div className="fields">
+                        {/* <div className="fields">
                             <label>Phone Number</label>
                             <input type="text"
                                 id="txtPhoneNumber"
                                 placeholder="Enter Phone Number"
                                 onChange={(e) => handlePhoneNumberChange(e.target.value)}
                             />
-                        </div>
+                        </div> */}
 
                         <div className="fields">
                             <label>E-Mail</label>
