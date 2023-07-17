@@ -63,6 +63,7 @@ input{
 .saveBtn{
     font-size: 24px;
     cursor: pointer;
+    border-color: aqua;
 }
 
 .close-button{

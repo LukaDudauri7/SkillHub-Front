@@ -1,0 +1,23 @@
+.profile-div{
+    width: 800px;
+    height: 800px;
+    border-radius: 40px;
+    background-color:lightskyblue;
+    position: absolute;
+    left: calc(50% - 400px);
+    top: 130px;
+}
+
+.profile-header{
+    font-size: 30px;
+    font-family: 'Helvetica';
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.profile-fiels{
+    text-align: center;
+    width: auto;
+    height: 25px;
+}

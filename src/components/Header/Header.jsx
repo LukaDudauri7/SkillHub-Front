@@ -7,15 +7,15 @@ function Header() {
     <div>
       <div className="App-header">
         <div className='header-left-side'>
-          <div className='logo'></div>
-          <Link className='how-it-works' to="/howitworks">how it works</Link>
-          <div className='browse-job'>browse job</div>
+          <Link className='logo' to="/"></Link>
+          <Link className='how-it-works' to="/howitworks">როგორ მუშაობს</Link>
+          <div className='browse-job'>სამსახურის დამატება</div>
         </div>
 
         <div className='header-right-side'>
           <div className='reg'>
-            <Link className='login' to="/login">Log In</Link>
-            <Link className='sign-up' to="/signup">Join</Link>
+            <Link className='login' to="/login">შესვლა</Link>
+            <Link className='sign-up' to="/signup">რეგისტრაცია</Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
+import Header from "../Header/Header";
 import './Login.css'
 
 function Join(setIsShown) {
@@ -30,13 +32,14 @@ function Join(setIsShown) {
 
     return (
         <Fragment>
+            <Header />
             <div className="popup-bg">
                 <div className="popup">
                     <div className="form_wrapper">
-                        <div className="reg-header">Join</div>
+                        <div className="reg-header">შესვლა</div>
 
                         <div className="fields">
-                            <label>User Name</label>
+                            <label>სახელი</label>
                             <input type="text"
                                 id="txtName"
                                 placeholder="Enter UserName"
@@ -45,7 +48,7 @@ function Join(setIsShown) {
                         </div>
 
                         <div className="fields">
-                            <label>Password</label>
+                            <label>პაროლი</label>
                             <input type="text"
                                 id="txtAddress"
                                 placeholder="Enter Password"
@@ -54,7 +57,10 @@ function Join(setIsShown) {
                         </div>
 
                         <div className="save-div">
-                            <button className="saveBtn" onClick={() => handleSave()}>Save</button>
+
+                            <Link to="/profile">
+                                <button className="saveButton" onClick={() => handleSave()}>შენახვა</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

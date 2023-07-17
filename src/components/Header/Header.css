@@ -35,6 +35,10 @@
     color: #139ff0;
 }
 
+a.sign-up {
+    margin-left: 60px;
+}
+
 .logo {
     background-image: url(../../images/logo.gif);
     width: 180px;
